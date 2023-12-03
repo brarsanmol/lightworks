@@ -478,4 +478,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # Libraries / Properitary Binaries
-Libraries/
+Libraries/*.dll
+!Libraries/*-publicized.dll

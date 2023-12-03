@@ -23,22 +23,22 @@
   
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>Libraries\Assembly-CSharp.dll</HintPath>
+      <HintPath>Libraries\Assembly-CSharp-publicized.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
-      <HintPath>Libraries\Unity.InputSystem.dll</HintPath>
+      <HintPath>Libraries\Unity.InputSystem-publicized.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Unity.Netcode.Runtime">
-      <HintPath>Libraries\Unity.Netcode.Runtime.dll</HintPath>
+      <HintPath>Libraries\Unity.Netcode.Runtime-publicized.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>Libraries\UnityEngine.dll</HintPath>
+      <HintPath>Libraries\UnityEngine-publicized.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>Libraries\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>Libraries\UnityEngine.CoreModule-publicized.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>
