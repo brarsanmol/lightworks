@@ -41,10 +41,16 @@ namespace LightWorks
         /// </summary>
         private void AssignConfigValues()
         {
+            this.AssignDiscoFlashlightConfigValues();
+            this.AssignFlashlightConfigValues();
+        }
+
+        private void AssignDiscoFlashlightConfigValues()
+        {
             ConfigValues.DISCO_FLASHLIGHT_ENABLED = this.GetConfigValue(
                 "DiscoFlashlight",
                 "Enabled",
-                true,
+                false,
                 new ConfigDescription(
                     "Whether the flashlight transitions through a rainbow of colours!",
                     new AcceptableValueList<bool>(true, false)
@@ -72,6 +78,49 @@ namespace LightWorks
             ).Value;
         }
 
+        private void AssignFlashlightConfigValues()
+        {
+            ConfigValues.FLASHLIGHT_ENABLED = this.GetConfigValue(
+                "Flashlight",
+                "Enabled",
+                true,
+                new ConfigDescription(
+                    "Whether the flashlight changes to a user-specified colour.",
+                    new AcceptableValueList<bool>(true, false)
+                )
+            ).Value;
+            
+            ConfigValues.FLASHLIGHT_COLOUR_R = this.GetConfigValue(
+                "Flashlight",
+                "Red",
+                249f,
+                new ConfigDescription(
+                    "The intensity of red.",
+                    new AcceptableValueRange<float>(0f, 255f)
+                )
+            ).Value;
+            
+            ConfigValues.FLASHLIGHT_COLOUR_G = this.GetConfigValue(
+                "Flashlight",
+                "Green",
+                238f,
+                new ConfigDescription(
+                    "The intensity of green.",
+                    new AcceptableValueRange<float>(0f, 255f)
+                )
+            ).Value;
+            
+            ConfigValues.FLASHLIGHT_COLOUR_B = this.GetConfigValue(
+                "Flashlight",
+                "Blue",
+                214f,
+                new ConfigDescription(
+                    "The intensity of blue.",
+                    new AcceptableValueRange<float>(0f, 255f)
+                )
+            ).Value;
+        }
+        
         /// <summary>
         /// Retrieve a configuration value with a section and key, also allow specification of a description and default value.
         /// </summary>
