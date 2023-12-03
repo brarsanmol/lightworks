@@ -120,7 +120,7 @@ namespace LightWorks
                 )
             ).Value;
         }
-
+        
         /// <summary>
         /// Retrieve a configuration value with a section and key, also allow specification of a description and default value.
         /// </summary>
