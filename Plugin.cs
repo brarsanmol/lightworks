@@ -41,13 +41,33 @@ namespace LightWorks
         /// </summary>
         private void AssignConfigValues()
         {
-            ConfigValues.DISCO_FLASHLIGHT_TOGGLED = this.GetConfigValue(
+            ConfigValues.DISCO_FLASHLIGHT_ENABLED = this.GetConfigValue(
                 "DiscoFlashlight",
                 "Enabled",
                 true,
                 new ConfigDescription(
                     "Whether the flashlight transitions through a rainbow of colours!",
                     new AcceptableValueList<bool>(true, false)
+                )
+            ).Value;
+            
+            ConfigValues.DISCO_FLASHLIGHT_MINIMUM_SPEED = this.GetConfigValue(
+                "DiscoFlashlight",
+                "MinimumSpeed",
+                1.0f,
+                new ConfigDescription(
+                    "The minimum speed of the colour transition.",
+                    new AcceptableValueRange<float>(1.0f, float.MaxValue)
+                )
+            ).Value;
+            
+            ConfigValues.DISCO_FLASHLIGHT_MAXIMUM_SPEED = this.GetConfigValue(
+                "DiscoFlashlight",
+                "MaximumSpeed",
+                1.0f,
+                new ConfigDescription(
+                    "The maximum speed of the colour transition.",
+                    new AcceptableValueRange<float>(1.0f, float.MaxValue)
                 )
             ).Value;
         }
