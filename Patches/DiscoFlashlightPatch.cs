@@ -19,9 +19,9 @@ internal class DiscoFlashlightPatch
     /// <paramref name="__instance" />
     public static void Postfix(ref FlashlightItem __instance)
     {
-        if (!ConfigValues.DISCO_FLASHLIGHT_TOGGLED) return;
+        if (!ConfigValues.DISCO_FLASHLIGHT_ENABLED) return;
         
-        _time += Time.deltaTime * Random.Range(1.0f, 1.2f);
+        _time += Time.deltaTime * Random.Range(ConfigValues.DISCO_FLASHLIGHT_MINIMUM_SPEED, ConfigValues.DISCO_FLASHLIGHT_MAXIMUM_SPEED);
 
         var colour = new Color(
             Mathf.Sin(_time * 0.7f) * 0.5f + 0.5f,
